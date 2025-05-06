@@ -4,7 +4,9 @@ import { UsuariosComponent } from './usuarios.component';
 import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.component';
 
 const routes: Routes = [
-  { path: 'listar', component: ListaUsuariosComponent }
+  { path: 'listar', component: ListaUsuariosComponent },
+  { path: '', component: UsuariosComponent }
+  
 
 ];
 

@@ -8,34 +8,36 @@ import { Usuario } from '../models/Usuario';
 })
 export class ApiService {
 
-  // URL base de tu API (reemplázala con la URL real de tu backend)
   private apiUrl = 'http://localhost:8080/api/v1/usuario/'; 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  // Método GET para obtener datos
+  private getHeaders(): HttpHeaders {
+    const token = localStorage.getItem('token'); // Suponiendo que guardas el token en localStorage
+    return new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    });
+  }
+
   getData(): Observable<any> {
-    return this.http.get(this.apiUrl);
+    console.log( localStorage.getItem('token'));
+    return this.http.get(this.apiUrl, { headers: this.getHeaders() });
   }
 
   buscarUsuariosPorNombre(nombre: string): Observable<Usuario[]> {
-    return this.http.get<Usuario[]>(this.apiUrl+'usuario?nombre='+nombre);
+    return this.http.get<Usuario[]>(`${this.apiUrl}usuario?nombre=${nombre}`, { headers: this.getHeaders() });
   }
 
-  
-
-  // Método POST para enviar datos
   postData(endpoint: string, data: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/${endpoint}`, data);
+    return this.http.post(`${this.apiUrl}${endpoint}`, data, { headers: this.getHeaders() });
   }
 
-  // Método PUT para actualizar datos
   putData(endpoint: string, data: any): Observable<any> {
-    return this.http.put(`${this.apiUrl}/${endpoint}`, data);
+    return this.http.put(`${this.apiUrl}${endpoint}`, data, { headers: this.getHeaders() });
   }
 
-  // Método DELETE para eliminar datos
   deleteData(endpoint: string): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${endpoint}`);
+    return this.http.delete(`${this.apiUrl}${endpoint}`, { headers: this.getHeaders() });
   }
 }

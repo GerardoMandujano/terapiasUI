@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+<span>Terapias app</span>
+
+<div class="col-md-10"></div>
+
+<button mat-button [matMenuTriggerFor]="menu" class="btn btn-outline-success my-2 my-sm-0"> Configuracion    
+           <mat-icon>account_circle</mat-icon>
+</button>
+<mat-menu #menu="matMenu" >
+    
+  <button mat-menu-item>Mi perfil</button>
+  <button mat-menu-item >Cerrar Sesion</button>
+
+</mat-menu>
+
+ 
+  
+</mat-toolbar>

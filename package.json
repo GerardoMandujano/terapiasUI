@@ -20,10 +20,7 @@
     "@angular/platform-browser": "^15.2.0",
     "@angular/platform-browser-dynamic": "^15.2.0",
     "@angular/router": "^15.2.0",
-<<<<<<< HEAD
-=======
     "@ng-bootstrap/ng-bootstrap": "^14.2.0",
->>>>>>> 65452e58424193190af9e4462801ceca4d91f8d1
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.3",
     "jwt-decode": "^4.0.0",

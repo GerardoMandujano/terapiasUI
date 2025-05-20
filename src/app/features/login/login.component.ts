@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from 'src/app/services/auth-service.service';
+import { AuthService } from 'src/app/core/services/auth/auth-service.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -15,6 +15,11 @@ export class LoginComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
   onLogin() {
+    if (!this.username || !this.password) {
+      this.errorMessage = 'Por favor, completa todos los campos.';
+      return;
+    }
+
     this.authService.login({ username: this.username, password: this.password })
       .subscribe({
         next: (response) => {
@@ -23,22 +28,17 @@ export class LoginComponent {
 
           localStorage.setItem('token', token);
           localStorage.setItem('rol', rol);
-          const decoded: any = this.decodeToken(token);
-          this.router.navigate(['/usuarios']);
-          
+
+          // Redirección basada en el rol
+          if (rol === 'admin') {
+            this.router.navigate(['/usuarios']);
+          } else {
+            this.router.navigate(['/inicio']);
+          }
         },
-        error: (err) => {
+        error: () => {
           this.errorMessage = 'Credenciales inválidas.';
-          this.router.navigate(['/']);
         }
       });
-  }
-
-  private decodeToken(token: string): any {
-    try {
-      return JSON.parse(atob(token.split('.')[1]));
-    } catch (e) {
-      return {};
-    }
   }
 }

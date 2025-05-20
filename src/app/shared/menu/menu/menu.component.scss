@@ -1,27 +1,57 @@
-.card{
-    margin: 10px 10px ;
-    padding: 10px;
-    background-color: rgb(234, 234, 234);
+/* Estilo del sidebar */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
 }
 
-.card-contenido{
-    background-color: rgb(255, 255, 255);
+/* Cuando está colapsado en pantallas pequeñas */
+.sidebar.collapsed {
+    transform: translateX(-100%);
 }
-.card-titulo{
-    padding: 10px;
 
-    
-}
-.lista-btn{
-    text-align: left;
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-
-
-}
-.lista-btn:hover{
-    background-color: rgb(202, 208, 208);
+/* Mostrar botón hamburguesa solo en pantallas pequeñas */
+.menu-toggle {
+    display: none;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    background: none;
+    border: none;
     cursor: pointer;
+    z-index: 1100;
 }
 
 
+.acordeon{
+    background-color: aqua;
+    height: 500px;
+}
+/* En pantallas grandes, el sidebar siempre está visible */
+@media (min-width: 769px) {
+    .sidebar {
+        transform: translateX(0); /* Siempre visible */
+    }
+}
+
+/* En pantallas pequeñas */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Mostrar el botón hamburguesa */
+    }
+  
+    .sidebar {
+        transform: translateX(-100%); /* Ocultar el sidebar por defecto */
+    }
+  
+    .sidebar:not(.collapsed) {
+        transform: translateX(0); /* Mostrar el sidebar cuando no esté colapsado */
+    }
+}

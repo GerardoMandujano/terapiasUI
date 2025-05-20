@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { UsuariosRoutingModule } from './usuarios-routing.module';
 import { UsuariosComponent } from './usuarios.component';
 import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.component';
-import { MaterialModule } from 'src/app/material/material.module';
+import { MaterialModule } from 'src/app/material.module';
 import { FormsModule } from '@angular/forms';
 
 

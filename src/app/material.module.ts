@@ -11,7 +11,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatListModule} from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatExpansionModule} from '@angular/material/expansion';
-
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatSelectModule } from '@angular/material/select';
 @NgModule({
   declarations: [],
   imports: [
@@ -26,7 +27,9 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatPaginatorModule,
     MatListModule,
     MatMenuModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatSidenavModule,
+    MatSelectModule,
     
   ],
   exports: [
@@ -41,6 +44,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatListModule,
     MatMenuModule,
     MatExpansionModule,
+    MatSidenavModule,
+    MatSelectModule
     
   ]
 })

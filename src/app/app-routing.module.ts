@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from './guards/auth.guard';
 import { InicioComponent } from './feature/pages/inicio/inicio.component';
 import { LayoutComponent } from './layouts/layout/layout.component';
 import { LoginLayoutComponent } from './layouts/login-layout/login-layout.component';
 
 const routes: Routes = [
+  // Redirección por defecto
+  {
+    path: '',
+    redirectTo: '/login',
+    pathMatch: 'full',
+  },
   {
     path: '',
     component: LoginLayoutComponent,
@@ -20,7 +25,6 @@ const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
-    canActivate: [AuthGuard],
     children: [
       {
         path: 'dashboard',
@@ -43,12 +47,7 @@ const routes: Routes = [
       },
     ],
   },
-  // 👇 Coloca la redirección al final
-  {
-    path: '',
-    redirectTo: '/login',
-    pathMatch: 'full',
-  },
+  // Ruta wildcard para manejar URLs no válidas
   {
     path: '**',
     redirectTo: '/unauthorized',

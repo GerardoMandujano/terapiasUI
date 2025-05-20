@@ -1,35 +1,29 @@
-<div class="row">
-    <div>
-        <mat-card class="card">
-            <mat-card-header>
-            </mat-card-header>
-          <div class="container">
-            <mat-card-content class="card-contenido">
-                <mat-list>
-                    <mat-list-item role="listitem" class="lista-btn" routerLink="/inicio">
-                        <span class="material-icons">
-                            home
-                        </span>Inicio</mat-list-item>
-                    <mat-list-item role="listitem" class="lista-btn" routerLink="/usuarios/listar">
-                        <span class="material-icons">
-                            people
-                            </span>    Usuarios
-                    </mat-list-item>
-                    <mat-list-item role="listitem" class="lista-btn">Inicio</mat-list-item>
-                    <mat-list-item role="listitem" class="lista-btn">Inicio</mat-list-item>
-                    <mat-list-item role="listitem" class="lista-btn">Inicio</mat-list-item>
-                    <mat-list-item role="listitem" class="lista-btn">Inicio</mat-list-item>
-                    <mat-list-item role="listitem" class="lista-btn">Inicio</mat-list-item>
 
-                </mat-list>
-                
-            </mat-card-content>
-          </div>
-        </mat-card>
-    </div>
+<mat-drawer-container class="example-container">
+    <div class="">
+        <button type="button" mat-button (click)="drawer.toggle()">
+          ☰
+        </button>
+      </div>
+    <mat-drawer #drawer class="sidebar.collapsed sidebar" mode="side">
+              <mat-list>
+                <mat-list-item class="btn" routerLink="/inicio">
+                  <span class="material-icons">home</span> 
+                  <span>INICIO</span>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item class="btn button" routerLink="/usuarios/listar">
+                  <span class="material-icons">people</span> Usuarios
+                </mat-list-item>
+                <mat-divider></mat-divider>
 
-   </div>
-
-
-
+                <mat-list-item>
+                    
+                </mat-list-item>
+              </mat-list>
+              <mat-divider></mat-divider>
+    </mat-drawer>
+  
+ 
+  </mat-drawer-container>
 

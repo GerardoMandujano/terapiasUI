@@ -5,7 +5,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { ResumenComponent } from './resumen/resumen.component';
 import { GraficosComponent } from './graficos/graficos.component';
-import { MaterialModule } from 'src/app/material/material.module';
+import { MaterialModule } from 'src/app/material.module';
 
 
 @NgModule({

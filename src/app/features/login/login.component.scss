@@ -1,13 +1,29 @@
+
+.header{
+  width: 90%;
+
+}
+ img{  width: 150px;
+  height: 100px;
+}
+
+.contenido{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .login-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+  
   }
   
   .login-card {
-    width: 600px;
+    width: 900px;
     padding: 20px;
+    margin: auto;
+    display: flexbox;
   }
   
   .error-message {
@@ -15,4 +31,54 @@
     font-size: 14px;
     margin-top: 10px;
   }
+  .imagen{
+    max-width: 700px;
+    max-height: 800px;
+    width: 500px;
+    height: 700px;
+  }
+
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centra horizontalmente */
+    justify-content: center;
+    margin-top: 50px;
+  }
   
+  .input-field {
+    width: 100%;
+    max-width: 400px; /* tamaño máximo del input */
+    font-size: 18px;
+  }
+  
+  ::ng-deep .mat-form-field-infix {
+    font-size: 18px; /* aumenta el tamaño del texto */
+  }
+
+  .titulo{
+    font-size: 24px;
+    display: block;
+    margin: 10px 10px;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .footer{
+    width: 90%;
+    padding: 0%;
+    margin-top: 0;
+    text-align: center;
+    display: block;
+    margin: auto;
+  }
+
+  @media only screen and (max-width: 900px) {
+    body {
+      background-color: lightblue;
+      background-image: "assets/img/logo.png";
+    }
+    img{
+      display: none;
+    }
+  }

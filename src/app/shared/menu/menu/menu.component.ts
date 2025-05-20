@@ -5,6 +5,16 @@ import { Component } from '@angular/core';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })
-export class MenuComponent {
+export class MenuComponent  {
+  isCollapsed = false;
+  showFiller = false;
 
+
+
+
+
+
+  toggleSidebar() {
+    this.isCollapsed = !this.isCollapsed;
+  }
 }
